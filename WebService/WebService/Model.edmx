@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TKHTQuanLyBanHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TKHTQuanLyBanHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="DM_CUA_HANG">
           <Key>
             <PropertyRef Name="ID" />
@@ -20,10 +20,10 @@
           </Key>
           <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MA_HANG_HOA" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="MA_VACH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MA_VACH" Type="nvarchar" MaxLength="50" />
           <Property Name="TEN_HANG_HOA" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="ID_NHA_CUNG_CAP" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="MO_TA" Type="ntext" Nullable="false" />
+          <Property Name="MO_TA" Type="ntext" />
         </EntityType>
         <EntityType Name="DM_KHACH_HANG">
           <Key>
@@ -204,6 +204,7 @@
           <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_PHIEU_NHAP_XUAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ID_SIZE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="SO_LUONG" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="GIA_NHAP_XUAT" Type="decimal" Precision="14" Scale="4" Nullable="false" />
         </EntityType>
@@ -240,6 +241,7 @@
           <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_CUA_HANG" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ID_SIZE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="SO_LUONG_TON_KHO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -792,8 +794,7 @@
             <End Role="GD_TON_KHO" EntitySet="GD_TON_KHO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TKHTQuanLyBanHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -815,10 +816,10 @@
           </Key>
           <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MA_HANG_HOA" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MA_VACH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MA_VACH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TEN_HANG_HOA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ID_NHA_CUNG_CAP" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="MO_TA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MO_TA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DM_NHA_CUNG_CAP" Relationship="Self.FK_DM_HANG_HOA_DM_NHA_CUNG_CAP" FromRole="DM_HANG_HOA" ToRole="DM_NHA_CUNG_CAP" />
           <NavigationProperty Name="DM_LINK_ANH" Relationship="Self.FK_DM_LINK_ANH_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="DM_LINK_ANH" />
           <NavigationProperty Name="GD_CLICK_HANG_HOA" Relationship="Self.FK_GD_CLICK_HANG_HOA_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_CLICK_HANG_HOA" />
@@ -1052,6 +1053,7 @@
           <Property Name="GIA_NHAP_XUAT" Type="Decimal" Precision="14" Scale="4" Nullable="false" />
           <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_DM_HANG_HOA" FromRole="GD_PHIEU_NHAP_XUAT_CHI_TIET" ToRole="DM_HANG_HOA" />
           <NavigationProperty Name="GD_PHIEU_NHAP_XUAT" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT" FromRole="GD_PHIEU_NHAP_XUAT_CHI_TIET" ToRole="GD_PHIEU_NHAP_XUAT" />
+          <Property Name="ID_SIZE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="GD_SAN_PHAM_UA_THICH">
           <Key>
@@ -1097,6 +1099,7 @@
           <Property Name="SO_LUONG_TON_KHO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <NavigationProperty Name="DM_CUA_HANG" Relationship="Self.FK_GD_TON_KHO_DM_CUA_HANG" FromRole="GD_TON_KHO" ToRole="DM_CUA_HANG" />
           <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_TON_KHO_DM_HANG_HOA" FromRole="GD_TON_KHO" ToRole="DM_HANG_HOA" />
+          <Property Name="ID_SIZE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1869,6 +1872,7 @@
           <EntitySetMapping Name="GD_PHIEU_NHAP_XUAT_CHI_TIET">
             <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT_CHI_TIET">
               <MappingFragment StoreEntitySet="GD_PHIEU_NHAP_XUAT_CHI_TIET">
+                <ScalarProperty Name="ID_SIZE" ColumnName="ID_SIZE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_PHIEU_NHAP_XUAT" ColumnName="ID_PHIEU_NHAP_XUAT" />
                 <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
@@ -1909,6 +1913,7 @@
           <EntitySetMapping Name="GD_TON_KHO">
             <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_TON_KHO">
               <MappingFragment StoreEntitySet="GD_TON_KHO">
+                <ScalarProperty Name="ID_SIZE" ColumnName="ID_SIZE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_CUA_HANG" ColumnName="ID_CUA_HANG" />
                 <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
