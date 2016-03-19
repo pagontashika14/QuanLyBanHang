@@ -1,0 +1,75 @@
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\bin\Debug\LibraryApi.dll
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\bin\Debug\LibraryApi.pdb
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\bin\Debug\RestSharp.dll
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\bin\Debug\RestSharp.xml
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\obj\Debug\LibraryApi.dll
+C:\Users\Pagonta Shika\Desktop\AppQLHS\LibraryApi\obj\Debug\LibraryApi.pdb
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\LibraryApi.dll
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\LibraryApi.pdb
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\MyStruct.dll
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\RestSharp.dll
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\MyStruct.pdb
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\bin\Debug\RestSharp.xml
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\obj\Debug\LibraryApi.dll
+F:\[Study]Technology\C#\QuanLyHocSinh\AppQLHS\LibraryApi\obj\Debug\LibraryApi.pdb
+D:\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.dll
+D:\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.pdb
+D:\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+D:\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.dll
+D:\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+D:\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.xml
+D:\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+D:\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.dll
+D:\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.pdb
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.dll
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.pdb
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.dll
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.xml
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.dll
+D:\WorkSpace\Visual Studio\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.pdb
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.dll
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.pdb
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.dll
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.xml
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.dll
+C:\Users\pagon\Desktop\QLSB version 3\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.pdb
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.dll
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.pdb
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.dll
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.xml
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.dll
+C:\Users\pagon\Desktop\QLSB\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.pdb
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.dll
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\LibraryApi.pdb
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\DocX.dll
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.dll
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\bin\Debug\RestSharp.xml
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.dll
+C:\Users\Son Pham\Desktop\QLSB version xx\Quan ly san bong\LibraryApi\obj\Debug\LibraryApi.pdb
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\LibraryApi.dll
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\LibraryApi.pdb
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\DocX.dll
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\RestSharp.dll
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\RestSharp.xml
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.dll
+C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.pdb
