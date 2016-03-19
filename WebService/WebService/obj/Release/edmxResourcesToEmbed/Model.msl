@@ -216,6 +216,7 @@
     <EntitySetMapping Name="GD_PHIEU_NHAP_XUAT_CHI_TIET">
       <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT_CHI_TIET">
         <MappingFragment StoreEntitySet="GD_PHIEU_NHAP_XUAT_CHI_TIET">
+          <ScalarProperty Name="ID_SIZE" ColumnName="ID_SIZE" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ID_PHIEU_NHAP_XUAT" ColumnName="ID_PHIEU_NHAP_XUAT" />
           <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
@@ -256,6 +257,7 @@
     <EntitySetMapping Name="GD_TON_KHO">
       <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_TON_KHO">
         <MappingFragment StoreEntitySet="GD_TON_KHO">
+          <ScalarProperty Name="ID_SIZE" ColumnName="ID_SIZE" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ID_CUA_HANG" ColumnName="ID_CUA_HANG" />
           <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
