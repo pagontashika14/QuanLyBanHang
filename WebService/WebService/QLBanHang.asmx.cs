@@ -69,5 +69,37 @@ namespace WebService
                 TraKetQua(result);
             }
         }
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public void DanhSachLoaiTag()
+        {
+            try
+            {
+                var data = Function.LayDanhSachTag();
+                var result = new KetQuaTraVe(true, "Thành công", data);
+                TraKetQua(result);
+            }
+            catch (Exception e)
+            {
+                var result = new KetQuaTraVe(false, "Thất bại", e.Message);
+                TraKetQua(result);
+            }
+        }
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public void ChiTietHangHoa(decimal id_hang_hoa)
+        {
+            try
+            {
+                var data = Function.ChiTietHangHoa(id_hang_hoa);
+                var result = new KetQuaTraVe(true, "Thành công", data);
+                TraKetQua(result);
+            }
+            catch (Exception e)
+            {
+                var result = new KetQuaTraVe(false, "Thất bại", e.Message);
+                TraKetQua(result);
+            }
+        }
     }
 }
