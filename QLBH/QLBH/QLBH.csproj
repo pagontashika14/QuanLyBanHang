@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="Controls\ControlLoaiHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,7 +84,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Struct.cs" />
     <EmbeddedResource Include="Controls\ControlLoaiHang.resx">
       <DependentUpon>ControlLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,7 +126,14 @@
   <ItemGroup>
     <Content Include="Control icons\abc.jpg" />
     <Content Include="Control icons\Comments-48.png" />
+    <None Include="Resources\Untitled.png" />
     <None Include="Control icons\Like Filled-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryApi\LibraryApi.csproj">
+      <Project>{6cd3b725-8eb5-47df-8181-f26764a2518f}</Project>
+      <Name>LibraryApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

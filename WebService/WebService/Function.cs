@@ -8,6 +8,8 @@ namespace WebService
     public class Function
     {
         public const string DANH_MUC_SP = @"DANH_MUC_SAN_PHAM";
+        #region for hang hoa
+
         public static List<LoaiHang> DanhMucLoaiHang()
         {
             using (var context = new TKHTQuanLyBanHangEntities())
@@ -102,5 +104,6 @@ namespace WebService
             }
             return gia[0].GIA;
         }
+        #endregion
     }
 }

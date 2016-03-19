@@ -61,6 +61,7 @@
             // splitContainerControl1
             // 
             this.splitContainerControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainerControl1.Appearance.BackColor2 = System.Drawing.Color.Transparent;
             this.splitContainerControl1.Appearance.Options.UseBackColor = true;
             this.splitContainerControl1.AppearanceCaption.BackColor = System.Drawing.Color.Transparent;
             this.splitContainerControl1.AppearanceCaption.Options.UseBackColor = true;
@@ -71,8 +72,11 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainerControl1.Panel2.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.splitContainerControl1.Panel2.Appearance.BorderColor = System.Drawing.Color.Transparent;
             this.splitContainerControl1.Panel2.Appearance.Options.UseBackColor = true;
-            this.splitContainerControl1.Panel2.AppearanceCaption.BackColor = System.Drawing.Color.White;
+            this.splitContainerControl1.Panel2.Appearance.Options.UseBorderColor = true;
+            this.splitContainerControl1.Panel2.AppearanceCaption.BackColor = System.Drawing.Color.Transparent;
             this.splitContainerControl1.Panel2.AppearanceCaption.Options.UseBackColor = true;
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel2.Controls.Add(this.lbl_gia);
@@ -101,6 +105,11 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.panelControl1.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.panelControl1.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Appearance.Options.UseBorderColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.simpleButton2);
             this.panelControl1.Controls.Add(this.simpleButton1);
@@ -115,6 +124,8 @@
             // 
             // simpleButton2
             // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.BackgroundImage = global::QLBH.Properties.Resources.Comments_48;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -127,6 +138,9 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.BackgroundImage = global::QLBH.Properties.Resources.Comments_48;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -139,6 +153,9 @@
             // 
             // m_btn_xem_thong_ke
             // 
+            this.m_btn_xem_thong_ke.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.m_btn_xem_thong_ke.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.m_btn_xem_thong_ke.Appearance.Options.UseBackColor = true;
             this.m_btn_xem_thong_ke.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.m_btn_xem_thong_ke.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_btn_xem_thong_ke.Image = ((System.Drawing.Image)(resources.GetObject("m_btn_xem_thong_ke.Image")));
@@ -150,6 +167,9 @@
             // 
             // btn_them_vao_hoa_don
             // 
+            this.btn_them_vao_hoa_don.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btn_them_vao_hoa_don.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.btn_them_vao_hoa_don.Appearance.Options.UseBackColor = true;
             this.btn_them_vao_hoa_don.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btn_them_vao_hoa_don.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_them_vao_hoa_don.Image = ((System.Drawing.Image)(resources.GetObject("btn_them_vao_hoa_don.Image")));
@@ -163,6 +183,9 @@
             // 
             this.btn_sua_thong_tin.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.btn_sua_thong_tin.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.btn_sua_thong_tin.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btn_sua_thong_tin.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.btn_sua_thong_tin.Appearance.Options.UseBackColor = true;
             this.btn_sua_thong_tin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_sua_thong_tin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btn_sua_thong_tin.Dock = System.Windows.Forms.DockStyle.Right;

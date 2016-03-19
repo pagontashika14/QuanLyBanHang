@@ -19,14 +19,8 @@ namespace QLBH.Controls
             timer_doi_hinh_anh.Start();
         }
 
-        public void get_thong_tin(HangHoaMaster hang_hoa)
+        public void get_thong_tin()
         {
-            lbl_ma_hang.Text += hang_hoa.ma_hang_hoa;
-            lbl_ten_san_pham.Text += hang_hoa.ten_hang_hoa;
-            lbl_chat_lieu.Text += hang_hoa.chat_lieu;
-            lbl_gia.Text += hang_hoa.gia;
-            lbl_nha_san_xuat.Text += hang_hoa.nha_san_xuat;
-            pictureBox1.Image = img_list_anh_hang_hoa.Images[0];
 
         }
         #endregion
