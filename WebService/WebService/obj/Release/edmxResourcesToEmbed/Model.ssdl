@@ -15,10 +15,10 @@
     </Key>
     <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MA_HANG_HOA" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="MA_VACH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MA_VACH" Type="nvarchar" MaxLength="50" />
     <Property Name="TEN_HANG_HOA" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="ID_NHA_CUNG_CAP" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="MO_TA" Type="ntext" Nullable="false" />
+    <Property Name="MO_TA" Type="ntext" />
   </EntityType>
   <EntityType Name="DM_KHACH_HANG">
     <Key>
@@ -199,6 +199,7 @@
     <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_PHIEU_NHAP_XUAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_SIZE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="SO_LUONG" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="GIA_NHAP_XUAT" Type="decimal" Precision="14" Scale="4" Nullable="false" />
   </EntityType>
@@ -235,6 +236,7 @@
     <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_CUA_HANG" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_SIZE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="SO_LUONG_TON_KHO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
