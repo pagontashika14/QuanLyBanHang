@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -281,7 +281,7 @@ namespace WebService
                         var sl = context.GD_TON_KHO
                             .Where(s => s.ID_HANG_HOA == id && s.ID_SIZE == idSize)
                             .ToList();
-                        if (sl.Count==0)
+                        if (sl.Count == 0)
                         {
                             soLuong.so_luong = 0;
                         }
@@ -296,6 +296,19 @@ namespace WebService
                 }
                 hangHoa.cua_hang = listCuaHang;
                 return hangHoa;
+            }
+        }
+        public static List<HangHoa> lay_danh_sach_hang_hoa_theo_loai_hang_hoa(decimal id_loai_hang)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var ket_qua = new List<HangHoa>();
+                var ket_qua1 = TimKiemHangHoa("", "", id_loai_hang.ToString());
+                foreach (var item in ket_qua1)
+                {
+                    ket_qua.Add(ChiTietHangHoa(item.id));
+                }
+                return ket_qua;
             }
         }
     }
