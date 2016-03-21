@@ -101,5 +101,22 @@ namespace WebService
                 TraKetQua(result);
             }
         }
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public void LayDanhSachHangHoaTheoLoaiHangHoa(decimal id_loai_hang_hoa)
+        {
+            try
+            {
+                var data = Function.lay_danh_sach_hang_hoa_theo_loai_hang_hoa(id_loai_hang_hoa);
+                var result = new KetQuaTraVe(true, "Thành công", data);
+                TraKetQua(result);
+            }
+            catch (Exception e)
+            {
+                var result = new KetQuaTraVe(false, "Thất bại", e.Message);
+                TraKetQua(result);
+            }
+        }
+
     }
 }
