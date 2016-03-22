@@ -17,10 +17,11 @@ namespace WebService
         public decimal ID { get; set; }
         public decimal ID_CUA_HANG { get; set; }
         public decimal ID_HANG_HOA { get; set; }
-        public decimal SO_LUONG_TON_KHO { get; set; }
         public decimal ID_SIZE { get; set; }
+        public decimal SO_LUONG_TON_KHO { get; set; }
     
         public virtual DM_CUA_HANG DM_CUA_HANG { get; set; }
         public virtual DM_HANG_HOA DM_HANG_HOA { get; set; }
+        public virtual GD_TAG GD_TAG { get; set; }
     }
 }

@@ -35,12 +35,12 @@ namespace WebService
                 if (ma_hang_hoa != null && ma_hang_hoa != "")
                 {
                     var listHangHoa = context.DM_HANG_HOA.Where(s => s.MA_HANG_HOA == ma_hang_hoa).ToList();
-                    return toListHangHoaMaster(context, listHangHoa);
+                    return toListHangHoaMaster(listHangHoa);
                 }
                 if (ten_hang_hoa != null && ten_hang_hoa != "")
                 {
                     var listHangHoa = context.DM_HANG_HOA.Where(s => s.TEN_HANG_HOA.Contains(ten_hang_hoa)).ToList();
-                    return toListHangHoaMaster(context, listHangHoa);
+                    return toListHangHoaMaster(listHangHoa);
                 }
                 if (list_id_loai_tag != null && list_id_loai_tag != "")
                 {
@@ -73,49 +73,51 @@ namespace WebService
                         }
                         listHangHoa.Add(hangHoa);
                     }
-                    return toListHangHoaMaster(context, listHangHoa);
+                    return toListHangHoaMaster(listHangHoa);
                 }
                 return null;
             }
         }
-        static List<HangHoaMaster> toListHangHoaMaster(TKHTQuanLyBanHangEntities context, List<DM_HANG_HOA> dsHangHoa)
+        static List<HangHoaMaster> toListHangHoaMaster(List<DM_HANG_HOA> dsHangHoa)
         {
             var listHh = new List<HangHoaMaster>();
             foreach (var item in dsHangHoa)
             {
-                listHh.Add(toHangHoaMaster(context, item));
+                listHh.Add(toHangHoaMaster(item));
             }
             return listHh;
         }
-        static HangHoaMaster toHangHoaMaster(TKHTQuanLyBanHangEntities context, DM_HANG_HOA hh)
+        static HangHoaMaster toHangHoaMaster(DM_HANG_HOA hh)
         {
-            var hhMaster = new HangHoaMaster();
-            var id = hh.ID;
-            hhMaster.id = id;
-            hhMaster.ma_hang_hoa = hh.MA_HANG_HOA;
-            hhMaster.ten_hang_hoa = hh.TEN_HANG_HOA;
-            hhMaster.nha_san_xuat = hh.DM_NHA_CUNG_CAP.TEN_NHA_CUNG_CAP;
-            var listLink = new List<string>();
-            var dsLink = context.DM_LINK_ANH.Where(s => s.ID_HANG_HOA == id).ToList();
-            foreach (var link in dsLink)
+            using (var context = new TKHTQuanLyBanHangEntities())
             {
-                listLink.Add(link.LINK_ANH);
+                var hhMaster = new HangHoaMaster();
+                var id = hh.ID;
+                hhMaster.id = id;
+                hhMaster.ma_hang_hoa = hh.MA_HANG_HOA;
+                hhMaster.ten_hang_hoa = hh.TEN_HANG_HOA;
+                hhMaster.nha_san_xuat = hh.DM_NHA_CUNG_CAP.TEN_NHA_CUNG_CAP;
+                var listLink = new List<string>();
+                var dsLink = context.DM_LINK_ANH.Where(s => s.ID_HANG_HOA == id).ToList();
+                foreach (var link in dsLink)
+                {
+                    listLink.Add(link.LINK_ANH);
+                }
+                hhMaster.ds_link = listLink;
+                var dsTag = context.GD_HANG_HOA_TAG.Where(s => s.ID_HANG_HOA == id).ToList();
+                var listTag = new List<Tag>();
+                foreach (var tag in dsTag)
+                {
+                    var t = new Tag();
+                    t.id = tag.ID_TAG;
+                    t.ma_tag = tag.GD_TAG.MA_TAG;
+                    t.ten_tag = tag.GD_TAG.TEN_TAG;
+                    listTag.Add(t);
+                }
+                hhMaster.ds_tag = listTag;
+                hhMaster.gia = layGia(context, id);
+                return hhMaster;
             }
-            hhMaster.ds_link = listLink;
-            var dsTag = context.GD_HANG_HOA_TAG.Where(s => s.ID_HANG_HOA == id).ToList();
-            var listTag = new List<Tag>();
-            foreach (var tag in dsTag)
-            {
-                var t = new Tag();
-                t.id = tag.ID_TAG;
-                t.ma_tag = tag.GD_TAG.MA_TAG;
-                t.ten_tag = tag.GD_TAG.TEN_TAG;
-                listTag.Add(t);
-            }
-            hhMaster.ds_tag = listTag;
-            hhMaster.gia = layGia(context, id);
-            hhMaster.chat_lieu = "nil";
-            return hhMaster;
         }
 
         static decimal layGia(TKHTQuanLyBanHangEntities context, decimal idHh)
@@ -298,7 +300,7 @@ namespace WebService
                 return hangHoa;
             }
         }
-        public static List<HangHoa> lay_danh_sach_hang_hoa_theo_loai_hang_hoa(decimal id_loai_hang)
+        public static List<HangHoa> DanhSachHangHoa(decimal id_loai_hang)
         {
             using (var context = new TKHTQuanLyBanHangEntities())
             {
@@ -309,6 +311,93 @@ namespace WebService
                     ket_qua.Add(ChiTietHangHoa(item.id));
                 }
                 return ket_qua;
+            }
+        }
+        public static ThanhVien ChiTietThanhVien(decimal id_thanh_vien)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var thanhVien = new ThanhVien();
+                var tv = context.DM_KHACH_HANG.Where(s => s.ID == id_thanh_vien).FirstOrDefault();
+                if (tv == null)
+                {
+                    throw new Exception("Không có thành viên này");
+                }
+                thanhVien.id = tv.ID;
+                thanhVien.ho_dem = tv.DM_TAI_KHOAN.HO_DEM;
+                thanhVien.ten = tv.DM_TAI_KHOAN.TEN;
+                thanhVien.so_dien_thoai = tv.SO_DIEN_THOAI;
+                thanhVien.email = tv.DM_TAI_KHOAN.EMAIL;
+                thanhVien.lien_lac = tv.LIEN_LAC;
+                thanhVien.ngay_gia_nhap = tv.NGAY_THAM_GIA;
+                thanhVien.ten_tai_khoan = tv.DM_TAI_KHOAN.TEN_TAI_KHOAN;
+                thanhVien.diem = tv.DIEM;
+                thanhVien.tong_tien_da_mua = tv.TONG_TIEN_DA_MUA;
+                var listHoaDon = new List<HoaDonMaster>();
+                var id_tai_khoan = tv.DM_TAI_KHOAN.ID;
+                var dsHoaDon = context.GD_HOA_DON
+                    .Where(s => s.ID_TAI_KHOAN == id_tai_khoan)
+                    .OrderByDescending(s => s.THOI_GIAN_TAO);
+                foreach (var item in dsHoaDon)
+                {
+                    var hoaDon = new HoaDonMaster();
+                    hoaDon.id = item.ID;
+                    hoaDon.ngay_mua = item.THOI_GIAN_TAO;
+                    var dsHangHoa = item.GD_HOA_DON_CHI_TIET;
+                    var hd = new List<HoaDonSimple>();
+                    foreach (var hh in dsHangHoa)
+                    {
+                        var hang = new HoaDonSimple();
+                        hang.hang_hoa = toHangHoaMaster(hh.DM_HANG_HOA);
+                        hang.id_size = hh.ID_SIZE;
+                        hang.so_luong = hh.SO_LUONG;
+                        hang.gia_ban = hh.GIA_BAN;
+                        hd.Add(hang);
+                    }
+                    hoaDon.hang_hoa = hd;
+                    listHoaDon.Add(hoaDon);
+                }
+                thanhVien.hoa_don = listHoaDon;
+                var dsSanPhamUaThich = context.GD_SAN_PHAM_UA_THICH
+                    .Where(s => s.ID_TAI_KHOAN == id_tai_khoan);
+                var listSput = new List<HangHoaMaster>();
+                foreach (var item in dsSanPhamUaThich)
+                {
+                    var hh = toHangHoaMaster(item.DM_HANG_HOA);
+                    listSput.Add(hh);
+                }
+                thanhVien.san_pham_ua_thich = listSput;
+                var dshhDaXem = context.GD_CLICK_HANG_HOA
+                    .Where(s => s.ID_TAI_KHOAN == id_tai_khoan)
+                    .GroupBy(s => s.ID_HANG_HOA,
+                    (key, g) => new
+                    {
+                        thoi_gian = g.Max(k => k.THOI_GIAN),
+                        hang_hoa = g.FirstOrDefault().DM_HANG_HOA,
+                        so_click = g.Count()
+                    });
+                var listDaXem = new List<HangHoaDaXem>();
+                foreach (var item in dshhDaXem)
+                {
+                    var hhDaXem = new HangHoaDaXem();
+                    hhDaXem.thoi_gian = item.thoi_gian;
+                    hhDaXem.hang_hoa = toHangHoaMaster(item.hang_hoa);
+                    hhDaXem.so_click = item.so_click;
+                    listDaXem.Add(hhDaXem);
+                }
+                thanhVien.hang_hoa_da_xem = listDaXem;
+                var dsComment = context.GD_NHAN_XET.Where(s => s.ID_TAI_KHOAN == id_tai_khoan);
+                var listComment = new List<CommentMaster>();
+                foreach (var item in dsComment)
+                {
+                    var comment = new CommentMaster();
+                    comment.hang_hoa =toHangHoaMaster(item.DM_HANG_HOA);
+                    comment.thoi_gian = item.THOI_GIAN;
+                    comment.comment = item.NHAN_XET;
+                    listComment.Add(comment);
+                }
+                thanhVien.comment = listComment;
+                return thanhVien;
             }
         }
     }

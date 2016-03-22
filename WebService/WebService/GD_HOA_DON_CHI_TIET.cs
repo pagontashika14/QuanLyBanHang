@@ -20,8 +20,10 @@ namespace WebService
         public decimal SO_LUONG { get; set; }
         public decimal GIA_BAN { get; set; }
         public string DA_THANH_TOAN { get; set; }
+        public decimal ID_SIZE { get; set; }
     
         public virtual DM_HANG_HOA DM_HANG_HOA { get; set; }
         public virtual GD_HOA_DON GD_HOA_DON { get; set; }
+        public virtual GD_TAG GD_TAG { get; set; }
     }
 }

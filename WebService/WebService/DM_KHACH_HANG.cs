@@ -20,6 +20,7 @@ namespace WebService
         public System.DateTime NGAY_THAM_GIA { get; set; }
         public decimal DIEM { get; set; }
         public decimal TONG_TIEN_DA_MUA { get; set; }
+        public string SO_DIEN_THOAI { get; set; }
     
         public virtual DM_TAI_KHOAN DM_TAI_KHOAN { get; set; }
     }
