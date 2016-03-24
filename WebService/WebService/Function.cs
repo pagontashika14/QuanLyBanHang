@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.IO;
+using System.Net;
 
 namespace WebService
 {
@@ -9,6 +11,8 @@ namespace WebService
     {
         public const string DANH_MUC_SP = @"DANH_MUC_SAN_PHAM";
         public const string SIZE = @"SIZE_QUAN_AO";
+        public const string WEB_PATH = @"d:\DZHosts\LocalUser\pagontashika31\www.quanlybanhang.somee.com\";
+        public const string WEB_ADDRESS = @"http://quanlybanhang.somee.com/";
         public static List<LoaiHang> DanhMucLoaiHang()
         {
             using (var context = new TKHTQuanLyBanHangEntities())
@@ -297,6 +301,7 @@ namespace WebService
                     listCuaHang.Add(ch);
                 }
                 hangHoa.cua_hang = listCuaHang;
+                //
                 return hangHoa;
             }
         }
@@ -400,5 +405,68 @@ namespace WebService
                 return thanhVien;
             }
         }
+        public static List<ThanhVienMaster> TimKiemThanhVienMuaNhieuNhat(int top)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var dsKh = context.DM_KHACH_HANG.OrderByDescending(s => s.TONG_TIEN_DA_MUA).Take(top);
+                return toListThanhVienMaster(dsKh.ToList());
+            }
+        }
+        static List<ThanhVienMaster> toListThanhVienMaster(List<DM_KHACH_HANG> dsKh)
+        {
+            var listTv = new List<ThanhVienMaster>();
+            foreach (var item in dsKh)
+            {
+                listTv.Add(toThanhVienMaster(item));
+            }
+            return listTv;
+        }
+        static ThanhVienMaster toThanhVienMaster(DM_KHACH_HANG kh)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var khach_hang = new ThanhVienMaster();
+                khach_hang.id = kh.ID;
+                khach_hang.ho_dem = kh.DM_TAI_KHOAN.HO_DEM;
+                khach_hang.ten = kh.DM_TAI_KHOAN.TEN;
+                khach_hang.ten_tai_khoan = kh.DM_TAI_KHOAN.TEN_TAI_KHOAN;
+                khach_hang.email = kh.DM_TAI_KHOAN.EMAIL;
+                khach_hang.lien_lac = kh.LIEN_LAC;
+                khach_hang.so_dien_thoai = kh.SO_DIEN_THOAI;
+                khach_hang.diem = kh.DIEM;
+                khach_hang.ngay_gia_nhap = kh.NGAY_THAM_GIA;
+                khach_hang.tong_tien_da_mua = kh.TONG_TIEN_DA_MUA;
+                return khach_hang;
+            }
+        }
+        public static string upLoadFile(string binary,string file_name)
+        {
+            var list = new List<byte>();
+            foreach (var item in binary.ToArray())
+            {
+                list.Add(byte.Parse(item.ToString()));
+            }
+            byte[] bin = list.ToArray();
+            var type = file_name.Split('.').Last();
+            string path = "";
+            if (type=="jpg"||type=="png")
+            {
+                path = @"image/";
+            }
+            else if (type=="docx")
+            {
+                path = @"docx/";
+            }
+            else
+            {
+                throw new Exception("Sai tên file");
+            }
+            path += file_name;
+            File.WriteAllBytes(WEB_PATH + path, bin);
+            var link = WEB_ADDRESS + path;
+            return link;
+        }
+        
     }
 }

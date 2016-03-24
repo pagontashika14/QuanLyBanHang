@@ -89,3 +89,6 @@ C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\QLBH\bin\Debug\ja\DevExpress.Office.v
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\QLBH\bin\Debug\ru\DevExpress.Office.v14.1.Core.resources.dll
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\QLBH\obj\Debug\QLBH.exe
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\QLBH\obj\Debug\QLBH.pdb
+E:\Studies\QuanLyBanHang\QLBH\QLBH\bin\Debug\QLBH.exe.config
+E:\Studies\QuanLyBanHang\QLBH\QLBH\obj\Debug\QLBH.exe
+E:\Studies\QuanLyBanHang\QLBH\QLBH\obj\Debug\QLBH.pdb

@@ -133,6 +133,21 @@ namespace WebService
                 TraKetQua(result);
             }
         }
-
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public void UploadFile(string binary,string file_name)
+        {
+            try
+            {
+                var data = Function.upLoadFile(binary, file_name);
+                var result = new KetQuaTraVe(true, "Thành công", data);
+                TraKetQua(result);
+            }
+            catch (Exception e)
+            {
+                var result = new KetQuaTraVe(false, "Thất bại", e.Message);
+                TraKetQua(result);
+            }
+        }
     }
 }
