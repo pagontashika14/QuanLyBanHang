@@ -135,6 +135,23 @@ namespace WebService
         }
         [WebMethod]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public void TinhTrangKinhDoanhMatHang(decimal id_hang_hoa, DateTime thoi_gian_bat_dau, DateTime thoi_gian_ket_thuc)
+        {
+            try
+            {
+                var data = Function.tinh_trang_kinh_doanh(id_hang_hoa, thoi_gian_bat_dau, thoi_gian_ket_thuc);
+                var result = new KetQuaTraVe(true, "Thành công", data);
+                TraKetQua(result);
+            }
+            catch (Exception e)
+            {
+                var result = new KetQuaTraVe(false, "Thất bại", e.Message);
+                TraKetQua(result);
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
         public void UploadFile(string binary,string file_name)
         {
             try
