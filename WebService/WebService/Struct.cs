@@ -123,4 +123,13 @@ namespace WebService
         public string comment { get; set; }
         public DateTime thoi_gian { get; set; }
     }
+    public class PhieuNhapXuat
+    {
+        public decimal id { get; set; }
+        public string ma_phieu { get; set; }
+        public string loai_phieu { get; set; }
+        public DateTime ngay_nhap_xuat { get; set; }
+        public List<HoaDonSimple> thong_tin_chi_tiet { get; set; }
+    }
+  
 }

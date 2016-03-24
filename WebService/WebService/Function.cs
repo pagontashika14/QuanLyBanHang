@@ -120,7 +120,7 @@ namespace WebService
             }
         }
 
-        static decimal layGia(TKHTQuanLyBanHangEntities context, decimal idHh)
+        public static decimal layGia(TKHTQuanLyBanHangEntities context, decimal idHh)
         {
             var gia = context.GD_GIA.Where(s => s.ID_HANG_HOA == idHh)
                 .OrderByDescending(s => s.NGAY_LUU_HANH)
@@ -131,7 +131,7 @@ namespace WebService
             }
             return gia[0].GIA;
         }
-        static List<decimal> layHetIDTag(List<decimal> listTag)
+        public static List<decimal> layHetIDTag(List<decimal> listTag)
         {
             using (var context = new TKHTQuanLyBanHangEntities())
             {
@@ -391,7 +391,7 @@ namespace WebService
                 foreach (var item in dsComment)
                 {
                     var comment = new CommentMaster();
-                    comment.hang_hoa =toHangHoaMaster(item.DM_HANG_HOA);
+                    comment.hang_hoa = toHangHoaMaster(item.DM_HANG_HOA);
                     comment.thoi_gian = item.THOI_GIAN;
                     comment.comment = item.NHAN_XET;
                     listComment.Add(comment);
@@ -400,5 +400,85 @@ namespace WebService
                 return thanhVien;
             }
         }
+        #region chi_tiet_hang_hoa_tinh_trang_kinh_doanh
+        public static object tinh_trang_kinh_doanh(decimal id_hang_hoa, DateTime bd, DateTime kt)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var ket_qua = new Dictionary<string, object>();
+                var list = new List<Dictionary<string, object>>();
+                int thang_bd = bd.Month;
+                int nam_bd = bd.Year;
+                int thang_kt = kt.Month;
+                int nam_kt = kt.Year;
+                int so_thang = thang_kt - thang_bd + (nam_kt - nam_bd) * 12;
+                int nam = nam_bd;
+                int thang = thang_bd;
+                for (int i = 0; i <= so_thang; i++)
+                {
+                    list.Add(tinh_trang_kinh_doanh_mat_hang_trong_thang(id_hang_hoa, thang, nam));
+                    thang++;
+                    if (thang % 13 == 0)
+                    {
+                        thang = 1;
+                        nam += 1;
+                    }
+                }
+                return ket_qua;
+            }
+        }
+        public static Dictionary<string,object> tinh_trang_kinh_doanh_mat_hang_trong_thang(decimal id_hang_hoa, int thang, int nam)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var ket_qua = new Dictionary<string, object>();
+                ket_qua["thang"] = thang;
+                ket_qua["nam"] = nam;
+                ket_qua["thong_tin_nhap"] = thong_tin_nhap_xuat_hang_trong_thang(id_hang_hoa, thang, nam, "N");
+                ket_qua["thong_tin_xuat"] = thong_tin_nhap_xuat_hang_trong_thang(id_hang_hoa, thang, nam, "X");
+                return ket_qua;
+            }
+        }
+
+        public static object thong_tin_nhap_xuat_hang_trong_thang(decimal id_hang_hoa, int thang, int nam, string nhap_or_xuat)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                var ket_qua = new Dictionary<string, object>();
+                //lay het phieu NHAP trong thang va nam truyen vao
+                var p1 = context.GD_PHIEU_NHAP_XUAT.Where(s => s.LOAI_PHIEU == nhap_or_xuat & s.NGAY_NHAP.Month == thang & s.NGAY_NHAP.Year == nam).Select(s => s.ID).ToList();
+                //lay het thong tin phieu NHAP trong thang va nam truyen vao va co hang hoa can tim
+                var p = context.GD_PHIEU_NHAP_XUAT_CHI_TIET.Where(s => s.ID_HANG_HOA == id_hang_hoa & p1.Contains(s.ID));
+                ket_qua["so_luong"] = p.Sum(s => s.SO_LUONG);
+                ket_qua["so_tien"] = p.Sum(s => s.SO_LUONG * s.GIA_NHAP_XUAT);
+                return ket_qua;
+            }
+        }
+        public static PhieuNhapXuat thong_tin_phieu_nhap_xuat(decimal id_phieu)
+        {
+            using (var context = new TKHTQuanLyBanHangEntities())
+            {
+                PhieuNhapXuat kq = new PhieuNhapXuat();
+                var p = context.GD_PHIEU_NHAP_XUAT.Where(s => s.ID == id_phieu).FirstOrDefault();
+                kq.id = p.ID;
+                kq.loai_phieu = p.LOAI_PHIEU;
+                kq.ngay_nhap_xuat = p.NGAY_NHAP;
+                kq.ma_phieu = p.MA_PHIEU;
+                var p1 = p.GD_PHIEU_NHAP_XUAT_CHI_TIET;
+                kq.thong_tin_chi_tiet = new List<HoaDonSimple>();
+                foreach (var item in p1)
+                {
+                    HoaDonSimple hds = new HoaDonSimple();
+                    hds.hang_hoa = toHangHoaMaster(item.DM_HANG_HOA);
+                    hds.gia_ban = item.GIA_NHAP_XUAT;
+                    hds.id_size = item.ID_SIZE;
+                    hds.so_luong = item.SO_LUONG;
+                    kq.thong_tin_chi_tiet.Add(hds);
+                }
+                return kq;
+            }
+        }
+        #endregion
+
     }
 }
