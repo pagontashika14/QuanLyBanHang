@@ -131,5 +131,64 @@ namespace WebService
         public DateTime ngay_nhap_xuat { get; set; }
         public List<HoaDonSimple> thong_tin_chi_tiet { get; set; }
     }
+    
+    namespace ChiTietKhuyenMaiMotHangHoa
+    {
+        public class LuotClick
+        {
+            public decimal id { get; set; }
+            public DateTime thoi_gian_click { get; set; }
+        }
+        public class Cuahang
+        {
+            public decimal id { get; set; }
+            public string ten_cua_hang { get; set; }
+        }
+        public class HoaDon
+        {
+            public decimal id { get; set; }
+            public DateTime thoi_gian_tao { get; set; }
+            public Cuahang cua_hang { get; set; }
+            public List<HoaDonChiTiet> chi_tiet { get; set; }
+        }
+        public class HoaDonChiTiet
+        {
+            public decimal id { get; set; }
+            public int so_luong { get; set; }
+            public decimal gia_ban { get; set; }
+        }
+        public class DotKhuyenMai
+        {
+            public decimal id { get; set; }
+            public string ma_dot { get; set; }
+            public string mo_ta { get; set; }
+            public DateTime bat_dau { get; set; }
+            public DateTime ket_thuc { get; set; }
+            public decimal muc_khuyen_mai { get; set; }
+        }
+    }
+
+    namespace QuanLyGiaHangHoaChiTiet
+    {
+        public class HoaDon
+        {
+            public decimal id { get; set; }
+            public DateTime thoi_gian_tao { get; set; }
+            public List<HoaDonChiTiet> chi_tiet { get; set; }
+        }
+        public class HoaDonChiTiet
+        {
+            public decimal id { get; set; }
+            public int so_luong { get; set; }
+            public decimal gia_ban { get; set; }
+        }
+        public class TonKho
+        {
+            public class 
+        }
+
+        int[] a = new int[81];
+
+    }
   
 }

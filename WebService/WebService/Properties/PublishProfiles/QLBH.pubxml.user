@@ -194,7 +194,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/17/2016 22:51:48</publishTime>
     </File>
     <File Include="Model.edmx.diagram">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2016 23:32:29</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>03/17/2016 22:52:26</publishTime>

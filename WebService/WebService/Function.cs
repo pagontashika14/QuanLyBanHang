@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace WebService
 {
@@ -479,6 +480,7 @@ namespace WebService
             }
         }
         #endregion
-
+        #region 
+        #endregion
     }
 }

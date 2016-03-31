@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="19aa27c490d6468490bb22dc8055b594" Name="Diagram1">
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_CUA_HANG" Width="1.5" PointX="3.75" PointY="29.75" IsExpanded="true" />
+      <Diagram DiagramId="55f6ac19b0594b73b1ee7db479feeb42" Name="Diagram1">
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_CUA_HANG" Width="1.5" PointX="9" PointY="26.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_HANG_HOA" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_KHACH_HANG" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LINK_ANH" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LOAI_TAG" Width="1.5" PointX="3.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LOAI_TAI_KHOAN" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_NHA_CUNG_CAP" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN" Width="1.5" PointX="5.75" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN_CHI_TIET" Width="1.5" PointX="8" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN" Width="1.5" PointX="12" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN_CHI_TIET" Width="1.5" PointX="14.25" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_TAI_KHOAN" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_CLICK_HANG_HOA" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_DANH_GIA" Width="1.5" PointX="8.25" PointY="18.875" IsExpanded="true" />
@@ -25,12 +25,12 @@
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_KHUYEN_MAI_CHI_TIET" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_NHAN_XET" Width="1.5" PointX="11.25" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT_CHI_TIET" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT_CHI_TIET" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_SAN_PHAM_UA_THICH" Width="1.5" PointX="11.25" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TAG" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TAG_CHI_TIET" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TON_KHO" Width="1.5" PointX="11.25" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.sysdiagram" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TON_KHO" Width="1.5" PointX="11.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.sysdiagram" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_DM_QUYEN_CHI_TIET_DM_CUA_HANG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_HOA_DON_DM_CUA_HANG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_TON_KHO_DM_CUA_HANG" ManuallyRouted="false" />
@@ -63,9 +63,6 @@
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_TAG_CHI_TIET_GD_TAG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_TAG_CHI_TIET_GD_TAG1" ManuallyRouted="false" />
-        <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_HOA_DON_CHI_TIET_GD_TAG" />
-        <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_TAG" />
-        <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_TON_KHO_GD_TAG" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
