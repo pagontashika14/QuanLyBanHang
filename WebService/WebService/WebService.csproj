@@ -280,7 +280,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HangHoa.cs" />
     <Compile Include="KetQuaTraVe.cs" />
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -342,7 +341,6 @@
     </EntityDeploy>
     <Content Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
-      <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\QLBH.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

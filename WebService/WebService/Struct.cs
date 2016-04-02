@@ -5,6 +5,8 @@ using System.Web;
 
 namespace WebService
 {
+    #region Quản lý hàng hóa
+    #region Quản lý danh mục hàng hóa
     public class LoaiHang
     {
         public decimal id { get; set; }
@@ -81,23 +83,7 @@ namespace WebService
         public DateTime thoi_gian { get; set; }
     }
 
-    public class ThanhVien
-    {
-        public decimal id { get; set; } //
-        public string ho_dem { get; set; } //
-        public string ten { get; set; } //
-        public string so_dien_thoai { get; set; } //
-        public string email { get; set; } //
-        public string lien_lac { get; set; } //
-        public DateTime ngay_gia_nhap { get; set; } // 
-        public string ten_tai_khoan { get; set; } //
-        public decimal diem { get; set; } //
-        public decimal tong_tien_da_mua { get; set; } //
-        public List<HoaDonMaster> hoa_don { get; set; } //
-        public List<HangHoaMaster> san_pham_ua_thich { get; set; } //
-        public List<HangHoaDaXem> hang_hoa_da_xem { get; set; } //
-        public List<CommentMaster> comment { get; set; }
-    }
+
     public class HoaDonMaster
     {
         public decimal id { get; set; }
@@ -131,64 +117,60 @@ namespace WebService
         public DateTime ngay_nhap_xuat { get; set; }
         public List<HoaDonSimple> thong_tin_chi_tiet { get; set; }
     }
-    
-    namespace ChiTietKhuyenMaiMotHangHoa
+    #endregion
+    namespace ChiTietHangHoa
     {
-        public class LuotClick
+        namespace BaoCaoPhanHoi
         {
-            public decimal id { get; set; }
-            public DateTime thoi_gian_click { get; set; }
+            public class KhachHang
+            {
+                public decimal id { get; set; }
+                public string ten_khach_hang { get; set; }
+                public string link_anh_dai_dien { get; set; }
+            }
+            public class LuotXem
+            {
+                public decimal id { get; set; }
+                public DateTime thoi_gian { get; set; }
+            }
+            public class Comment
+            {
+                public decimal id { get; set; }
+                public string noi_dung { get; set; }
+                public DateTime thoi_gian { get; set; }
+                public KhachHang nguoi_commnet { get; set; }
+            }
+            public class ThongKeTheoThang
+            {
+                public int thang { get; set; }
+                public int nam { get; set; }
+                public List<Comment> comments { get; set; }
+                public List<LuotXem> luot_xem { get; set; }
+                public double rating { get; set; }
+                public int duoc_yeu_thich { get; set; }
+            }
         }
-        public class Cuahang
-        {
-            public decimal id { get; set; }
-            public string ten_cua_hang { get; set; }
-        }
-        public class HoaDon
-        {
-            public decimal id { get; set; }
-            public DateTime thoi_gian_tao { get; set; }
-            public Cuahang cua_hang { get; set; }
-            public List<HoaDonChiTiet> chi_tiet { get; set; }
-        }
-        public class HoaDonChiTiet
-        {
-            public decimal id { get; set; }
-            public int so_luong { get; set; }
-            public decimal gia_ban { get; set; }
-        }
-        public class DotKhuyenMai
-        {
-            public decimal id { get; set; }
-            public string ma_dot { get; set; }
-            public string mo_ta { get; set; }
-            public DateTime bat_dau { get; set; }
-            public DateTime ket_thuc { get; set; }
-            public decimal muc_khuyen_mai { get; set; }
-        }
+        
     }
-
-    namespace QuanLyGiaHangHoaChiTiet
+    #endregion
+    #region Quản lý thành viên
+    public class ThanhVien
     {
-        public class HoaDon
-        {
-            public decimal id { get; set; }
-            public DateTime thoi_gian_tao { get; set; }
-            public List<HoaDonChiTiet> chi_tiet { get; set; }
-        }
-        public class HoaDonChiTiet
-        {
-            public decimal id { get; set; }
-            public int so_luong { get; set; }
-            public decimal gia_ban { get; set; }
-        }
-        public class TonKho
-        {
-            public class 
-        }
-
-        int[] a = new int[81];
-
+        public decimal id { get; set; } //
+        public string ho_dem { get; set; } //
+        public string ten { get; set; } //
+        public string so_dien_thoai { get; set; } //
+        public string email { get; set; } //
+        public string lien_lac { get; set; } //
+        public DateTime ngay_gia_nhap { get; set; } // 
+        public string ten_tai_khoan { get; set; } //
+        public decimal diem { get; set; } //
+        public decimal tong_tien_da_mua { get; set; } //
+        public List<HoaDonMaster> hoa_don { get; set; } //
+        public List<HangHoaMaster> san_pham_ua_thich { get; set; } //
+        public List<HangHoaDaXem> hang_hoa_da_xem { get; set; } //
+        public List<CommentMaster> comment { get; set; }
     }
-  
+    #endregion
+
 }
