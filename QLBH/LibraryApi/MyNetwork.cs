@@ -14,6 +14,7 @@ namespace LibraryApi
     {
         public const string URL_SERVICE = @"http://quanlybanhang.somee.com//QLBanHang.asmx/";
         public const string URL_GET_LOAI_HANG = URL_SERVICE + @"DanhSachLoaiHang";
+        public const string URL_LAY_DANH_SACH_HANG_THEO_LOAI_HANG = URL_SERVICE + @"LayDanhSachHangHoaTheoLoaiHangHoa";
         public const string URL_GET_TAG = URL_SERVICE;
         public delegate void CompleteHandle(object data);
         static void requestDataWithParam<T>(Dictionary<string, object> param
@@ -36,6 +37,41 @@ namespace LibraryApi
                     {
                         T jsonObject = JsonConvert.DeserializeObject<T>(response.Content);
                         f.Invoke(new Action(() =>
+                        {
+                            MyDelegate(jsonObject);
+                        }));
+                    }
+                    else
+                    {
+                        throw new Exception(response.ErrorMessage);
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        static void requestDataWithParam<T>(Dictionary<string, object> param
+           , string url
+           , Control user_control
+           , CompleteHandle MyDelegate
+           )
+        {
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest(Method.POST);
+                foreach (KeyValuePair<string, object> pair in param)
+                {
+                    request.AddParameter(pair.Key, pair.Value);
+                }
+                client.ExecuteAsync(request, response =>
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        T jsonObject = JsonConvert.DeserializeObject<T>(response.Content);
+                        user_control.Invoke(new Action(() =>
                         {
                             MyDelegate(jsonObject);
                         }));
@@ -88,7 +124,19 @@ namespace LibraryApi
             Dictionary<string, object> param = new Dictionary<string, object>();
             requestDataWithParam<LOAI_HANG>(param, URL_GET_LOAI_HANG,f, MyDelegate);
         }
+        public static void GetDanhSachLoaiHang(
+           Control uc,
+           CompleteHandle MyDelegate)
+        {
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            requestDataWithParam<LOAI_HANG>(param, URL_GET_LOAI_HANG, uc, MyDelegate);
+        }
+        public static void LayDanhSachHangHoaTheoLoaiHangHoa(decimal id_loai_hang,Form f, CompleteHandle MyDelegate)
+        {
+            Dictionary<string, object> param = new Dictionary<string, object>();
+            param["id_loai_hang_hoa"] = id_loai_hang;
+            requestDataWithParam<DanhSachHangHoa>(param, URL_LAY_DANH_SACH_HANG_THEO_LOAI_HANG, f, MyDelegate);
+        }
 
-      
     }
 }

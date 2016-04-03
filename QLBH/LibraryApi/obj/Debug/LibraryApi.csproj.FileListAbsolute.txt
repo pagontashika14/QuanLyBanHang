@@ -70,6 +70,5 @@ C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\RestSharp.dll
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\RestSharp.xml
-C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.dll
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.pdb

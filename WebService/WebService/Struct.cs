@@ -5,6 +5,8 @@ using System.Web;
 
 namespace WebService
 {
+    #region Quản lý hàng hóa
+    #region Quản lý danh mục hàng hóa
     public class LoaiHang
     {
         public decimal id { get; set; }
@@ -30,7 +32,7 @@ namespace WebService
     }
     public class LoaiTag
     {
-        public decimal id;
+        public decimal id { get; set; }
         public string ma_loai_tag { get; set; }
         public string ten_loai_tag { get; set; }
         public List<Tag> ds_tag { get; set; }
@@ -51,7 +53,6 @@ namespace WebService
         public decimal diem_danh_gia { get; set; }
         public List<NhanXet> nhan_xet { get; set; }
         public List<CuaHang> cua_hang { get; set; }
-
     }
     public class NhaCungCap
     {
@@ -82,23 +83,7 @@ namespace WebService
         public DateTime thoi_gian { get; set; }
     }
 
-    public class ThanhVien
-    {
-        public decimal id { get; set; }
-        public string ho_dem { get; set; }
-        public string ten { get; set; }
-        public string so_dien_thoai { get; set; }
-        public string email { get; set; }
-        public string lien_lac { get; set; }
-        public DateTime ngay_gia_nhap { get; set; }
-        public string ten_tai_khoan { get; set; }
-        public decimal diem { get; set; }
-        public decimal tong_tien_da_mua { get; set; }
-        public List<HoaDonMaster> hoa_don { get; set; }
-        public List<HangHoaMaster> san_pham_ua_thich { get; set; }
-        public List<HangHoaDaXem> hang_hoa_da_xem { get; set; }
-        public List<CommentMaster> comment { get; set; }
-    }
+
     public class HoaDonMaster
     {
         public decimal id { get; set; }
@@ -132,18 +117,60 @@ namespace WebService
         public DateTime ngay_nhap_xuat { get; set; }
         public List<HoaDonSimple> thong_tin_chi_tiet { get; set; }
     }
-  
-    public class ThanhVienMaster
+    #endregion
+    namespace ChiTietHangHoa
     {
-        public decimal id { get; set; }
-        public string ho_dem { get; set; }
-        public string ten { get; set; }
-        public string so_dien_thoai { get; set; }
-        public string email { get; set; }
-        public string lien_lac { get; set; }
-        public DateTime ngay_gia_nhap { get; set; }
-        public string ten_tai_khoan { get; set; }
-        public decimal diem { get; set; }
-        public decimal tong_tien_da_mua { get; set; }
+        namespace BaoCaoPhanHoi
+        {
+            public class KhachHang
+            {
+                public decimal id { get; set; }
+                public string ten_khach_hang { get; set; }
+                public string link_anh_dai_dien { get; set; }
+            }
+            public class LuotXem
+            {
+                public decimal id { get; set; }
+                public DateTime thoi_gian { get; set; }
+            }
+            public class Comment
+            {
+                public decimal id { get; set; }
+                public string noi_dung { get; set; }
+                public DateTime thoi_gian { get; set; }
+                public KhachHang nguoi_commnet { get; set; }
+            }
+            public class ThongKeTheoThang
+            {
+                public int thang { get; set; }
+                public int nam { get; set; }
+                public List<Comment> comments { get; set; }
+                public List<LuotXem> luot_xem { get; set; }
+                public double rating { get; set; }
+                public int duoc_yeu_thich { get; set; }
+            }
+        }
+        
     }
+    #endregion
+    #region Quản lý thành viên
+    public class ThanhVien
+    {
+        public decimal id { get; set; } //
+        public string ho_dem { get; set; } //
+        public string ten { get; set; } //
+        public string so_dien_thoai { get; set; } //
+        public string email { get; set; } //
+        public string lien_lac { get; set; } //
+        public DateTime ngay_gia_nhap { get; set; } // 
+        public string ten_tai_khoan { get; set; } //
+        public decimal diem { get; set; } //
+        public decimal tong_tien_da_mua { get; set; } //
+        public List<HoaDonMaster> hoa_don { get; set; } //
+        public List<HangHoaMaster> san_pham_ua_thich { get; set; } //
+        public List<HangHoaDaXem> hang_hoa_da_xem { get; set; } //
+        public List<CommentMaster> comment { get; set; }
+    }
+    #endregion
+
 }

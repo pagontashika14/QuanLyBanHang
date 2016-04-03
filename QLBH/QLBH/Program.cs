@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLBH.Forms;
 
 namespace QLBH
 {
@@ -16,7 +17,8 @@ namespace QLBH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new f01_main_form());
+            //Application.Run(new f02_danh_muc_hang_hoa());
         }
     }
 }
