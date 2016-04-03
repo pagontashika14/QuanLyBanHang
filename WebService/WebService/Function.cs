@@ -449,16 +449,16 @@ namespace WebService
             }
             byte[] bin = list.ToArray();
             var type = file_name.Split('.').Last();
-            string path = "";
-            if (type=="jpg"||type=="png")
+            string path = @"";
+            if (type == "jpg" || type == "png")
             {
-                path = @"image/";
+                path = @"image\";
             }
-            else if (type=="docx")
+            else if (type == "docx")
             {
-                path = @"docx/";
+                path = @"docx\";
+            }
         }
-        #region chi_tiet_hang_hoa_tinh_trang_kinh_doanh
         public static object tinh_trang_kinh_doanh(decimal id_hang_hoa, DateTime bd, DateTime kt)
         {
             using (var context = new TKHTQuanLyBanHangEntities())
@@ -536,7 +536,6 @@ namespace WebService
                 return kq;
             }
         }
-        #endregion
 
     }
 }
