@@ -72,3 +72,13 @@ C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\bin\Debug\RestSharp.xml
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.dll
 C:\Users\Son Pham\Desktop\PTTKHT_QLBH\QLBH\LibraryApi\obj\Debug\LibraryApi.pdb
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\LibraryApi.dll
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\LibraryApi.pdb
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\DocX.dll
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.dll
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\RestSharp.dll
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\Newtonsoft.Json.xml
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\bin\Debug\RestSharp.xml
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\obj\Debug\LibraryApi.csprojResolveAssemblyReference.cache
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\obj\Debug\LibraryApi.dll
+E:\Studies\QuanLyBanHang\QLBH\LibraryApi\obj\Debug\LibraryApi.pdb

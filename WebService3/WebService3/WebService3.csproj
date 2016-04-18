@@ -76,6 +76,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModelQLBH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelQLBH.edmx</DependentUpon>
+      <LastGenOutput>ModelQLBH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelQLBH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelQLBH.edmx</DependentUpon>
+      <LastGenOutput>ModelQLBH.cs</LastGenOutput>
+    </Content>
     <Content Include="packages.config" />
     <EntityDeploy Include="ModelQLBH.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -92,16 +102,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelQLBH.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelQLBH.edmx</DependentUpon>
-      <LastGenOutput>ModelQLBH.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelQLBH.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelQLBH.edmx</DependentUpon>
-      <LastGenOutput>ModelQLBH.cs</LastGenOutput>
-    </Content>
     <Content Include="QLBanHang.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -147,9 +147,6 @@
     <Compile Include="GD_GIA.cs">
       <DependentUpon>ModelQLBH.tt</DependentUpon>
     </Compile>
-    <Compile Include="GD_GIA_NHAP_BINH_QUAN.cs">
-      <DependentUpon>ModelQLBH.tt</DependentUpon>
-    </Compile>
     <Compile Include="GD_HANG_HOA_TAG.cs">
       <DependentUpon>ModelQLBH.tt</DependentUpon>
     </Compile>
@@ -166,6 +163,9 @@
       <DependentUpon>ModelQLBH.tt</DependentUpon>
     </Compile>
     <Compile Include="GD_NHAN_XET.cs">
+      <DependentUpon>ModelQLBH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_PHIEU_NHAP_CHI_TIET.cs">
       <DependentUpon>ModelQLBH.tt</DependentUpon>
     </Compile>
     <Compile Include="GD_PHIEU_NHAP_XUAT.cs">
@@ -186,7 +186,6 @@
     <Compile Include="GD_TON_KHO.cs">
       <DependentUpon>ModelQLBH.tt</DependentUpon>
     </Compile>
-    <Compile Include="HangHoa.cs" />
     <Compile Include="KetQuaTraVe.cs" />
     <Compile Include="ModelQLBH.Context.cs">
       <AutoGen>True</AutoGen>
@@ -208,10 +207,10 @@
       <DependentUpon>QLBanHang.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Struct.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ModelQLBH.tt</DependentUpon>
     </Compile>
-    <Compile Include="ThanhVien.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

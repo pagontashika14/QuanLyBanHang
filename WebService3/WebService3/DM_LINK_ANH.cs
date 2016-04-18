@@ -17,7 +17,6 @@ namespace WebService3
         public decimal ID { get; set; }
         public decimal ID_HANG_HOA { get; set; }
         public string LINK_ANH { get; set; }
-        public string TEN_ANH { get; set; }
     
         public virtual DM_HANG_HOA DM_HANG_HOA { get; set; }
     }

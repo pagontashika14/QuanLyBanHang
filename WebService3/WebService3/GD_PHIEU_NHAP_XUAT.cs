@@ -17,6 +17,7 @@ namespace WebService3
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GD_PHIEU_NHAP_XUAT()
         {
+            this.GD_PHIEU_NHAP_CHI_TIET = new HashSet<GD_PHIEU_NHAP_CHI_TIET>();
             this.GD_PHIEU_NHAP_XUAT_CHI_TIET = new HashSet<GD_PHIEU_NHAP_XUAT_CHI_TIET>();
         }
     
@@ -27,6 +28,8 @@ namespace WebService3
         public Nullable<decimal> ID_TAI_KHOAN { get; set; }
     
         public virtual DM_TAI_KHOAN DM_TAI_KHOAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GD_PHIEU_NHAP_CHI_TIET> GD_PHIEU_NHAP_CHI_TIET { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GD_PHIEU_NHAP_XUAT_CHI_TIET> GD_PHIEU_NHAP_XUAT_CHI_TIET { get; set; }
     }

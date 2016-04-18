@@ -46,7 +46,6 @@
           <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="LINK_ANH" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="TEN_ANH" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_LOAI_TAG">
           <Key>
@@ -131,15 +130,6 @@
           <Property Name="NGAY_LUU_HANH" Type="datetime" Nullable="false" />
           <Property Name="GIA" Type="decimal" Precision="14" Scale="4" Nullable="false" />
         </EntityType>
-        <EntityType Name="GD_GIA_NHAP_BINH_QUAN">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="NGAY_AP_DUNG" Type="datetime" Nullable="false" />
-          <Property Name="GIA_NHAP_BINH_QUAN" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-        </EntityType>
         <EntityType Name="GD_HANG_HOA_TAG">
           <Key>
             <PropertyRef Name="ID" />
@@ -200,6 +190,16 @@
           <Property Name="THOI_GIAN" Type="datetime" Nullable="false" />
           <Property Name="NHAN_XET" Type="ntext" Nullable="false" />
         </EntityType>
+        <EntityType Name="GD_PHIEU_NHAP_CHI_TIET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PHIEU_NHAP_XUAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GIA_NHAP" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="GIA_NHAP_BINH_QUAN" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+        </EntityType>
         <EntityType Name="GD_PHIEU_NHAP_XUAT">
           <Key>
             <PropertyRef Name="ID" />
@@ -219,7 +219,6 @@
           <Property Name="ID_HANG_HOA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="ID_SIZE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="SO_LUONG" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="GIA_NHAP_XUAT" Type="decimal" Precision="14" Scale="4" Nullable="false" />
         </EntityType>
         <EntityType Name="GD_SAN_PHAM_UA_THICH">
           <Key>
@@ -413,13 +412,25 @@
         </Association>
         <Association Name="FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA">
           <End Role="DM_HANG_HOA" Type="Self.DM_HANG_HOA" Multiplicity="1" />
-          <End Role="GD_GIA_NHAP_BINH_QUAN" Type="Self.GD_GIA_NHAP_BINH_QUAN" Multiplicity="*" />
+          <End Role="GD_PHIEU_NHAP_CHI_TIET" Type="Self.GD_PHIEU_NHAP_CHI_TIET" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DM_HANG_HOA">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="GD_GIA_NHAP_BINH_QUAN">
+            <Dependent Role="GD_PHIEU_NHAP_CHI_TIET">
               <PropertyRef Name="ID_HANG_HOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT">
+          <End Role="GD_PHIEU_NHAP_XUAT" Type="Self.GD_PHIEU_NHAP_XUAT" Multiplicity="1" />
+          <End Role="GD_PHIEU_NHAP_CHI_TIET" Type="Self.GD_PHIEU_NHAP_CHI_TIET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_PHIEU_NHAP_XUAT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GD_PHIEU_NHAP_CHI_TIET">
+              <PropertyRef Name="ID_PHIEU_NHAP_XUAT" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -713,13 +724,13 @@
           <EntitySet Name="GD_CLICK_HANG_HOA" EntityType="Self.GD_CLICK_HANG_HOA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_DANH_GIA" EntityType="Self.GD_DANH_GIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_GIA" EntityType="Self.GD_GIA" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GD_GIA_NHAP_BINH_QUAN" EntityType="Self.GD_GIA_NHAP_BINH_QUAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_HANG_HOA_TAG" EntityType="Self.GD_HANG_HOA_TAG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_HOA_DON" EntityType="Self.GD_HOA_DON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_HOA_DON_CHI_TIET" EntityType="Self.GD_HOA_DON_CHI_TIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_KHUYEN_MAI" EntityType="Self.GD_KHUYEN_MAI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_KHUYEN_MAI_CHI_TIET" EntityType="Self.GD_KHUYEN_MAI_CHI_TIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_NHAN_XET" EntityType="Self.GD_NHAN_XET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GD_PHIEU_NHAP_CHI_TIET" EntityType="Self.GD_PHIEU_NHAP_CHI_TIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_PHIEU_NHAP_XUAT" EntityType="Self.GD_PHIEU_NHAP_XUAT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_PHIEU_NHAP_XUAT_CHI_TIET" EntityType="Self.GD_PHIEU_NHAP_XUAT_CHI_TIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GD_SAN_PHAM_UA_THICH" EntityType="Self.GD_SAN_PHAM_UA_THICH" Schema="dbo" store:Type="Tables" />
@@ -777,7 +788,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA" Association="Self.FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA">
             <End Role="DM_HANG_HOA" EntitySet="DM_HANG_HOA" />
-            <End Role="GD_GIA_NHAP_BINH_QUAN" EntitySet="GD_GIA_NHAP_BINH_QUAN" />
+            <End Role="GD_PHIEU_NHAP_CHI_TIET" EntitySet="GD_PHIEU_NHAP_CHI_TIET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT" Association="Self.FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT">
+            <End Role="GD_PHIEU_NHAP_XUAT" EntitySet="GD_PHIEU_NHAP_XUAT" />
+            <End Role="GD_PHIEU_NHAP_CHI_TIET" EntitySet="GD_PHIEU_NHAP_CHI_TIET" />
           </AssociationSet>
           <AssociationSet Name="FK_GD_HANG_HOA_TAG_DM_HANG_HOA" Association="Self.FK_GD_HANG_HOA_TAG_DM_HANG_HOA">
             <End Role="DM_HANG_HOA" EntitySet="DM_HANG_HOA" />
@@ -906,7 +921,7 @@
           <NavigationProperty Name="GD_CLICK_HANG_HOA" Relationship="Self.FK_GD_CLICK_HANG_HOA_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_CLICK_HANG_HOA" />
           <NavigationProperty Name="GD_DANH_GIA" Relationship="Self.FK_GD_DANH_GIA_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_DANH_GIA" />
           <NavigationProperty Name="GD_GIA" Relationship="Self.FK_GD_GIA_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_GIA" />
-          <NavigationProperty Name="GD_GIA_NHAP_BINH_QUAN" Relationship="Self.FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_GIA_NHAP_BINH_QUAN" />
+          <NavigationProperty Name="GD_PHIEU_NHAP_CHI_TIET" Relationship="Self.FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_PHIEU_NHAP_CHI_TIET" />
           <NavigationProperty Name="GD_HANG_HOA_TAG" Relationship="Self.FK_GD_HANG_HOA_TAG_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_HANG_HOA_TAG" />
           <NavigationProperty Name="GD_HOA_DON_CHI_TIET" Relationship="Self.FK_GD_HOA_DON_CHI_TIET_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_HOA_DON_CHI_TIET" />
           <NavigationProperty Name="GD_KHUYEN_MAI_CHI_TIET" Relationship="Self.FK_GD_KHUYEN_MAI_CHI_TIET_DM_HANG_HOA" FromRole="DM_HANG_HOA" ToRole="GD_KHUYEN_MAI_CHI_TIET" />
@@ -935,7 +950,6 @@
           <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_HANG_HOA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="LINK_ANH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TEN_ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_DM_LINK_ANH_DM_HANG_HOA" FromRole="DM_LINK_ANH" ToRole="DM_HANG_HOA" />
         </EntityType>
         <EntityType Name="DM_LOAI_TAG">
@@ -1042,16 +1056,6 @@
           <Property Name="GIA" Type="Decimal" Precision="14" Scale="4" Nullable="false" />
           <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_GIA_DM_HANG_HOA" FromRole="GD_GIA" ToRole="DM_HANG_HOA" />
         </EntityType>
-        <EntityType Name="GD_GIA_NHAP_BINH_QUAN">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_HANG_HOA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="NGAY_AP_DUNG" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="GIA_NHAP_BINH_QUAN" Type="Decimal" Precision="14" Scale="4" Nullable="false" />
-          <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA" FromRole="GD_GIA_NHAP_BINH_QUAN" ToRole="DM_HANG_HOA" />
-        </EntityType>
         <EntityType Name="GD_HANG_HOA_TAG">
           <Key>
             <PropertyRef Name="ID" />
@@ -1125,6 +1129,18 @@
           <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_NHAN_XET_DM_HANG_HOA" FromRole="GD_NHAN_XET" ToRole="DM_HANG_HOA" />
           <NavigationProperty Name="DM_TAI_KHOAN" Relationship="Self.FK_GD_NHAN_XET_DM_TAI_KHOAN" FromRole="GD_NHAN_XET" ToRole="DM_TAI_KHOAN" />
         </EntityType>
+        <EntityType Name="GD_PHIEU_NHAP_CHI_TIET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PHIEU_NHAP_XUAT" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ID_HANG_HOA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GIA_NHAP" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="GIA_NHAP_BINH_QUAN" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA" FromRole="GD_PHIEU_NHAP_CHI_TIET" ToRole="DM_HANG_HOA" />
+          <NavigationProperty Name="GD_PHIEU_NHAP_XUAT" Relationship="Self.FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT" FromRole="GD_PHIEU_NHAP_CHI_TIET" ToRole="GD_PHIEU_NHAP_XUAT" />
+        </EntityType>
         <EntityType Name="GD_PHIEU_NHAP_XUAT">
           <Key>
             <PropertyRef Name="ID" />
@@ -1135,6 +1151,7 @@
           <Property Name="LOAI_PHIEU" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ID_TAI_KHOAN" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="DM_TAI_KHOAN" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_DM_TAI_KHOAN" FromRole="GD_PHIEU_NHAP_XUAT" ToRole="DM_TAI_KHOAN" />
+          <NavigationProperty Name="GD_PHIEU_NHAP_CHI_TIET" Relationship="Self.FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT" FromRole="GD_PHIEU_NHAP_XUAT" ToRole="GD_PHIEU_NHAP_CHI_TIET" />
           <NavigationProperty Name="GD_PHIEU_NHAP_XUAT_CHI_TIET" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT" FromRole="GD_PHIEU_NHAP_XUAT" ToRole="GD_PHIEU_NHAP_XUAT_CHI_TIET" />
         </EntityType>
         <EntityType Name="GD_PHIEU_NHAP_XUAT_CHI_TIET">
@@ -1146,7 +1163,6 @@
           <Property Name="ID_HANG_HOA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="ID_SIZE" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="SO_LUONG" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="GIA_NHAP_XUAT" Type="Decimal" Precision="14" Scale="4" Nullable="false" />
           <NavigationProperty Name="DM_HANG_HOA" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_DM_HANG_HOA" FromRole="GD_PHIEU_NHAP_XUAT_CHI_TIET" ToRole="DM_HANG_HOA" />
           <NavigationProperty Name="GD_PHIEU_NHAP_XUAT" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT" FromRole="GD_PHIEU_NHAP_XUAT_CHI_TIET" ToRole="GD_PHIEU_NHAP_XUAT" />
           <NavigationProperty Name="GD_TAG" Relationship="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_TAG" FromRole="GD_PHIEU_NHAP_XUAT_CHI_TIET" ToRole="GD_TAG" />
@@ -1309,12 +1325,12 @@
         </Association>
         <Association Name="FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA">
           <End Role="DM_HANG_HOA" Type="Self.DM_HANG_HOA" Multiplicity="1" />
-          <End Role="GD_GIA_NHAP_BINH_QUAN" Type="Self.GD_GIA_NHAP_BINH_QUAN" Multiplicity="*" />
+          <End Role="GD_PHIEU_NHAP_CHI_TIET" Type="Self.GD_PHIEU_NHAP_CHI_TIET" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DM_HANG_HOA">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="GD_GIA_NHAP_BINH_QUAN">
+            <Dependent Role="GD_PHIEU_NHAP_CHI_TIET">
               <PropertyRef Name="ID_HANG_HOA" />
             </Dependent>
           </ReferentialConstraint>
@@ -1583,6 +1599,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT">
+          <End Role="GD_PHIEU_NHAP_XUAT" Type="Self.GD_PHIEU_NHAP_XUAT" Multiplicity="1" />
+          <End Role="GD_PHIEU_NHAP_CHI_TIET" Type="Self.GD_PHIEU_NHAP_CHI_TIET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GD_PHIEU_NHAP_XUAT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GD_PHIEU_NHAP_CHI_TIET">
+              <PropertyRef Name="ID_PHIEU_NHAP_XUAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT">
           <End Role="GD_PHIEU_NHAP_XUAT" Type="Self.GD_PHIEU_NHAP_XUAT" Multiplicity="1" />
           <End Role="GD_PHIEU_NHAP_XUAT_CHI_TIET" Type="Self.GD_PHIEU_NHAP_XUAT_CHI_TIET" Multiplicity="*" />
@@ -1657,13 +1685,13 @@
           <EntitySet Name="GD_CLICK_HANG_HOA" EntityType="Self.GD_CLICK_HANG_HOA" />
           <EntitySet Name="GD_DANH_GIA" EntityType="Self.GD_DANH_GIA" />
           <EntitySet Name="GD_GIA" EntityType="Self.GD_GIA" />
-          <EntitySet Name="GD_GIA_NHAP_BINH_QUAN" EntityType="Self.GD_GIA_NHAP_BINH_QUAN" />
           <EntitySet Name="GD_HANG_HOA_TAG" EntityType="Self.GD_HANG_HOA_TAG" />
           <EntitySet Name="GD_HOA_DON" EntityType="Self.GD_HOA_DON" />
           <EntitySet Name="GD_HOA_DON_CHI_TIET" EntityType="Self.GD_HOA_DON_CHI_TIET" />
           <EntitySet Name="GD_KHUYEN_MAI" EntityType="Self.GD_KHUYEN_MAI" />
           <EntitySet Name="GD_KHUYEN_MAI_CHI_TIET" EntityType="Self.GD_KHUYEN_MAI_CHI_TIET" />
           <EntitySet Name="GD_NHAN_XET" EntityType="Self.GD_NHAN_XET" />
+          <EntitySet Name="GD_PHIEU_NHAP_CHI_TIET" EntityType="Self.GD_PHIEU_NHAP_CHI_TIET" />
           <EntitySet Name="GD_PHIEU_NHAP_XUAT" EntityType="Self.GD_PHIEU_NHAP_XUAT" />
           <EntitySet Name="GD_PHIEU_NHAP_XUAT_CHI_TIET" EntityType="Self.GD_PHIEU_NHAP_XUAT_CHI_TIET" />
           <EntitySet Name="GD_SAN_PHAM_UA_THICH" EntityType="Self.GD_SAN_PHAM_UA_THICH" />
@@ -1705,7 +1733,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA" Association="Self.FK_GD_GIA_NHAP_BINH_QUAN_DM_HANG_HOA">
             <End Role="DM_HANG_HOA" EntitySet="DM_HANG_HOA" />
-            <End Role="GD_GIA_NHAP_BINH_QUAN" EntitySet="GD_GIA_NHAP_BINH_QUAN" />
+            <End Role="GD_PHIEU_NHAP_CHI_TIET" EntitySet="GD_PHIEU_NHAP_CHI_TIET" />
           </AssociationSet>
           <AssociationSet Name="FK_GD_HANG_HOA_TAG_DM_HANG_HOA" Association="Self.FK_GD_HANG_HOA_TAG_DM_HANG_HOA">
             <End Role="DM_HANG_HOA" EntitySet="DM_HANG_HOA" />
@@ -1795,6 +1823,10 @@
             <End Role="GD_KHUYEN_MAI" EntitySet="GD_KHUYEN_MAI" />
             <End Role="GD_KHUYEN_MAI_CHI_TIET" EntitySet="GD_KHUYEN_MAI_CHI_TIET" />
           </AssociationSet>
+          <AssociationSet Name="FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT" Association="Self.FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT">
+            <End Role="GD_PHIEU_NHAP_XUAT" EntitySet="GD_PHIEU_NHAP_XUAT" />
+            <End Role="GD_PHIEU_NHAP_CHI_TIET" EntitySet="GD_PHIEU_NHAP_CHI_TIET" />
+          </AssociationSet>
           <AssociationSet Name="FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT" Association="Self.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT">
             <End Role="GD_PHIEU_NHAP_XUAT" EntitySet="GD_PHIEU_NHAP_XUAT" />
             <End Role="GD_PHIEU_NHAP_XUAT_CHI_TIET" EntitySet="GD_PHIEU_NHAP_XUAT_CHI_TIET" />
@@ -1865,7 +1897,6 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
                 <ScalarProperty Name="LINK_ANH" ColumnName="LINK_ANH" />
-                <ScalarProperty Name="TEN_ANH" ColumnName="TEN_ANH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1961,16 +1992,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="GD_GIA_NHAP_BINH_QUAN">
-            <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_GIA_NHAP_BINH_QUAN">
-              <MappingFragment StoreEntitySet="GD_GIA_NHAP_BINH_QUAN">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
-                <ScalarProperty Name="NGAY_AP_DUNG" ColumnName="NGAY_AP_DUNG" />
-                <ScalarProperty Name="GIA_NHAP_BINH_QUAN" ColumnName="GIA_NHAP_BINH_QUAN" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="GD_HANG_HOA_TAG">
             <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_HANG_HOA_TAG">
               <MappingFragment StoreEntitySet="GD_HANG_HOA_TAG">
@@ -2037,6 +2058,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="GD_PHIEU_NHAP_CHI_TIET">
+            <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_CHI_TIET">
+              <MappingFragment StoreEntitySet="GD_PHIEU_NHAP_CHI_TIET">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_PHIEU_NHAP_XUAT" ColumnName="ID_PHIEU_NHAP_XUAT" />
+                <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
+                <ScalarProperty Name="GIA_NHAP" ColumnName="GIA_NHAP" />
+                <ScalarProperty Name="GIA_NHAP_BINH_QUAN" ColumnName="GIA_NHAP_BINH_QUAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="GD_PHIEU_NHAP_XUAT">
             <EntityTypeMapping TypeName="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT">
               <MappingFragment StoreEntitySet="GD_PHIEU_NHAP_XUAT">
@@ -2056,7 +2088,6 @@
                 <ScalarProperty Name="ID_HANG_HOA" ColumnName="ID_HANG_HOA" />
                 <ScalarProperty Name="ID_SIZE" ColumnName="ID_SIZE" />
                 <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
-                <ScalarProperty Name="GIA_NHAP_XUAT" ColumnName="GIA_NHAP_XUAT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -19,7 +19,6 @@ namespace WebService3
         public decimal ID_HANG_HOA { get; set; }
         public decimal ID_SIZE { get; set; }
         public decimal SO_LUONG { get; set; }
-        public decimal GIA_NHAP_XUAT { get; set; }
     
         public virtual DM_HANG_HOA DM_HANG_HOA { get; set; }
         public virtual GD_PHIEU_NHAP_XUAT GD_PHIEU_NHAP_XUAT { get; set; }

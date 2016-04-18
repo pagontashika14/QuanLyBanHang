@@ -38,13 +38,13 @@ namespace WebService3
         public virtual DbSet<GD_CLICK_HANG_HOA> GD_CLICK_HANG_HOA { get; set; }
         public virtual DbSet<GD_DANH_GIA> GD_DANH_GIA { get; set; }
         public virtual DbSet<GD_GIA> GD_GIA { get; set; }
-        public virtual DbSet<GD_GIA_NHAP_BINH_QUAN> GD_GIA_NHAP_BINH_QUAN { get; set; }
         public virtual DbSet<GD_HANG_HOA_TAG> GD_HANG_HOA_TAG { get; set; }
         public virtual DbSet<GD_HOA_DON> GD_HOA_DON { get; set; }
         public virtual DbSet<GD_HOA_DON_CHI_TIET> GD_HOA_DON_CHI_TIET { get; set; }
         public virtual DbSet<GD_KHUYEN_MAI> GD_KHUYEN_MAI { get; set; }
         public virtual DbSet<GD_KHUYEN_MAI_CHI_TIET> GD_KHUYEN_MAI_CHI_TIET { get; set; }
         public virtual DbSet<GD_NHAN_XET> GD_NHAN_XET { get; set; }
+        public virtual DbSet<GD_PHIEU_NHAP_CHI_TIET> GD_PHIEU_NHAP_CHI_TIET { get; set; }
         public virtual DbSet<GD_PHIEU_NHAP_XUAT> GD_PHIEU_NHAP_XUAT { get; set; }
         public virtual DbSet<GD_PHIEU_NHAP_XUAT_CHI_TIET> GD_PHIEU_NHAP_XUAT_CHI_TIET { get; set; }
         public virtual DbSet<GD_SAN_PHAM_UA_THICH> GD_SAN_PHAM_UA_THICH { get; set; }

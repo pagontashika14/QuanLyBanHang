@@ -4,34 +4,34 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6d3dc04d99404fbfba1079247718e28e" Name="Diagram1">
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_CUA_HANG" Width="1.5" PointX="3.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_HANG_HOA" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_KHACH_HANG" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LINK_ANH" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LOAI_TAG" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LOAI_TAI_KHOAN" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_NHA_CUNG_CAP" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN" Width="1.5" PointX="12" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN_CHI_TIET" Width="1.5" PointX="14.25" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_TAI_KHOAN" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_CLICK_HANG_HOA" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_DANH_GIA" Width="1.5" PointX="8.25" PointY="21" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_GIA" Width="1.5" PointX="5.25" PointY="26.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_GIA_NHAP_BINH_QUAN" Width="1.5" PointX="5.25" PointY="29.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_HANG_HOA_TAG" Width="1.5" PointX="8.25" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_HOA_DON" Width="1.5" PointX="6" PointY="32.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_HOA_DON_CHI_TIET" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_KHUYEN_MAI" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_KHUYEN_MAI_CHI_TIET" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_NHAN_XET" Width="1.5" PointX="11.25" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT" Width="1.5" PointX="9" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT_CHI_TIET" Width="1.5" PointX="11.25" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_SAN_PHAM_UA_THICH" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TAG" Width="1.5" PointX="9" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TAG_CHI_TIET" Width="1.5" PointX="11.25" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TON_KHO" Width="1.5" PointX="11.25" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.sysdiagram" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+      <Diagram DiagramId="388548ef2fc04198bf584b25f6001f0e" Name="Diagram1">
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_CUA_HANG" Width="1.5" PointX="3.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_HANG_HOA" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_KHACH_HANG" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LINK_ANH" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LOAI_TAG" Width="1.5" PointX="6.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_LOAI_TAI_KHOAN" Width="1.5" PointX="1.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_NHA_CUNG_CAP" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN" Width="1.5" PointX="5.75" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_QUYEN_CHI_TIET" Width="1.5" PointX="8" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.DM_TAI_KHOAN" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_CLICK_HANG_HOA" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_DANH_GIA" Width="1.5" PointX="8.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_GIA" Width="1.5" PointX="5.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_HANG_HOA_TAG" Width="1.5" PointX="8.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_HOA_DON" Width="1.5" PointX="6" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_HOA_DON_CHI_TIET" Width="1.5" PointX="8.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_KHUYEN_MAI" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_KHUYEN_MAI_CHI_TIET" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_NHAN_XET" Width="1.5" PointX="11.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_CHI_TIET" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_PHIEU_NHAP_XUAT_CHI_TIET" Width="1.5" PointX="11.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_SAN_PHAM_UA_THICH" Width="1.5" PointX="11.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TAG" Width="1.5" PointX="9" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TAG_CHI_TIET" Width="1.5" PointX="11.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.GD_TON_KHO" Width="1.5" PointX="11.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TKHTQuanLyBanHangModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_DM_QUYEN_CHI_TIET_DM_CUA_HANG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_HOA_DON_DM_CUA_HANG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_TON_KHO_DM_CUA_HANG" ManuallyRouted="false" />
@@ -63,6 +63,7 @@
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_HOA_DON_CHI_TIET_GD_HOA_DON" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_HOA_DON_CHI_TIET_GD_TAG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_KHUYEN_MAI_CHI_TIET_GD_KHUYEN_MAI" ManuallyRouted="false" />
+        <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_GIA_NHAP_BINH_QUAN_GD_PHIEU_NHAP_XUAT" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_PHIEU_NHAP_XUAT" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_PHIEU_NHAP_XUAT_CHI_TIET_GD_TAG" ManuallyRouted="false" />
         <AssociationConnector Association="TKHTQuanLyBanHangModel.FK_GD_TAG_CHI_TIET_GD_TAG" ManuallyRouted="false" />

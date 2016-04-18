@@ -21,7 +21,7 @@ namespace WebService3
             this.GD_CLICK_HANG_HOA = new HashSet<GD_CLICK_HANG_HOA>();
             this.GD_DANH_GIA = new HashSet<GD_DANH_GIA>();
             this.GD_GIA = new HashSet<GD_GIA>();
-            this.GD_GIA_NHAP_BINH_QUAN = new HashSet<GD_GIA_NHAP_BINH_QUAN>();
+            this.GD_PHIEU_NHAP_CHI_TIET = new HashSet<GD_PHIEU_NHAP_CHI_TIET>();
             this.GD_HANG_HOA_TAG = new HashSet<GD_HANG_HOA_TAG>();
             this.GD_HOA_DON_CHI_TIET = new HashSet<GD_HOA_DON_CHI_TIET>();
             this.GD_KHUYEN_MAI_CHI_TIET = new HashSet<GD_KHUYEN_MAI_CHI_TIET>();
@@ -49,7 +49,7 @@ namespace WebService3
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GD_GIA> GD_GIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GD_GIA_NHAP_BINH_QUAN> GD_GIA_NHAP_BINH_QUAN { get; set; }
+        public virtual ICollection<GD_PHIEU_NHAP_CHI_TIET> GD_PHIEU_NHAP_CHI_TIET { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GD_HANG_HOA_TAG> GD_HANG_HOA_TAG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
